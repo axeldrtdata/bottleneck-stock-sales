@@ -8,7 +8,7 @@ A stock and sales analysis for Bottleneck, an online wine shop, then an audit of
 
 Bottleneck sells wine and spirits online. Its head of sales sent three exports for October (the ERP, the WordPress website and a link table between their product IDs) with a brief in two phases: reconcile the files and find the errors in them, then analyse revenue, the 80/20 rule, price outliers, margins, stock rotation and correlations for the management committee.
 
-I presented that analysis in March 2026 (OpenClassrooms Project 6). In September 2026, the final project of my training (Project 13) asked me to audit one of my own deliverables with AI. This repository holds the rebuilt notebook.
+I presented that analysis in March 2026 (OpenClassrooms Project 6). In September 2026, the final project of my training (Project 13) asked me to audit this deliverable with AI. This repository holds the rebuilt notebook.
 
 ## Key results
 
@@ -18,7 +18,7 @@ I presented that analysis in March 2026 (OpenClassrooms Project 6). In September
 | Revenue in October | €119,666 excl. VAT, 5,737 items sold (7 of them €25 gift cards) |
 | 80/20 rule | 433 products, 60.7% of the catalogue, make 80% of revenue: no star products |
 | Stock | €277,225 at purchase price, covering 2.98 months of sales on average (2.40 at the median) |
-| Where the capital sleeps | 27 products hold 39.7% of the stock value: 24 cover more than a year of sales, 3 never sold. 23 of them are champagnes, 38% of the whole stock |
+| Where the capital sleeps | 27 products, mostly champagnes, hold 39.7% of the stock value: 24 cover more than a year of sales, 3 never sold |
 | Sold-out products | 23 products sold out after selling 194 bottles, €5,516 excl. VAT in October, to reorder first |
 | Price and sales | Spearman ρ = −0.71; stock and sales ρ = 0.76 |
 | Price anomalies | 4 entry errors fixed by rule (3 sign errors, 1 price ten times too low), 3 products priced at or below cost reported |
@@ -78,7 +78,6 @@ bottleneck-stock-sales/
 
 - One month of data: no seasonality, although October comes right before the year-end peak. A dormant champagne may just be waiting for Christmas.
 - VAT is not in the files: 20% is assumed, the standard French rate on wine and spirits, kept in a single constant. The three olive oils normally carry the reduced 5.5% rate.
-- The €25 gift card is counted as a product: 7 sold, €146 of revenue excl. VAT.
 - The thresholds (1 month to reorder, 12 months for dormant stock, a MAD score of 5 for prices) are conventions to set with the buyer.
 - The 109 products the ERP declares offline are not analysed.
 - The checks test that the exports are consistent, not that they are true.
